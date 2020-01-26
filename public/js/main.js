@@ -1,4 +1,5 @@
 var botaoReinicio = $('.reinicioJogo');
+botaoReinicio.addClass('campoDesativado')
 var tempoInicial = $('.segundos').text();
 var campoTexto = $('.campoDigitacao');
 
@@ -42,7 +43,8 @@ function cronometro() {
               campoTexto.attr('disabled', true);
               clearInterval(cronometroId);
               botaoReinicio.attr("disabled", false);
-              campoTexto.addClass('campoDesativado');
+              campoTexto.toggleClass('campoDesativado');
+              botaoReinicio.toggleClass('campoDesativado')
             }
           }, 1000);
     });
@@ -55,5 +57,7 @@ function reiniciarJogo() {
         $('.contCaracteres').text('0');
         $('.segundos').text(tempoInicial);
         cronometro();
-        campoTexto.removeClass('campoDesativado');
+        campoTexto.toggleClass('campoDesativado');
+        botaoReinicio.toggleClass('campoDesativado')
+
 }
