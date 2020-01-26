@@ -7,6 +7,7 @@ $(function () {
     contadores();
     cronometro();
     botaoReinicio.click(reiniciarJogo);
+    campoTexto.val('')
 });
 
 function tamanhoFrase() {
@@ -41,6 +42,7 @@ function cronometro() {
               campoTexto.attr('disabled', true);
               clearInterval(cronometroId);
               botaoReinicio.attr("disabled", false);
+              campoTexto.addClass('campoDesativado');
             }
           }, 1000);
     });
@@ -53,4 +55,5 @@ function reiniciarJogo() {
         $('.contCaracteres').text('0');
         $('.segundos').text(tempoInicial);
         cronometro();
+        campoTexto.removeClass('campoDesativado');
 }

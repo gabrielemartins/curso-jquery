@@ -1,0 +1,17 @@
+body {
+    color: white;
+    background-color: #0E0C13;
+}
+
+.frase {
+    font-size: 150%;
+}
+
+.campoDigitacao {
+    height: 30%;
+    font-size: 130%;
+}
+
+.campoDesativado {
+    opacity: 0.25;
+}
