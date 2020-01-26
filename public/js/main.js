@@ -12,5 +12,17 @@ campoTexto.on('input', function () {
     contPalavras.text(qtdPalavras)
 
     var contCaracteres = $('.contCaracteres');
-    contCaracteres.text(conteudo.length)
-})
+    contCaracteres.text(conteudo.length);
+});
+
+var tempo = $('.segundos').text();
+campoTexto.one('focus', function () {
+    var cronometroId = setInterval(function () {
+        tempo--;
+        $('.segundos').text(tempo)
+        if (tempo <=0) {
+          campoTexto.attr('disabled', true);
+          clearInterval(cronometroId);
+        }
+      }, 1000);
+});
