@@ -88,7 +88,16 @@ function reiniciarJogo() {
         botaoReinicio.toggleClass('campoDesativado');
         campoTexto.removeClass('textoErrado');
         campoTexto.removeClass('textoCerto');
-}
+
+        
+            var posicaoInicio = $("html, body").offset().top;
+        
+            $("html, body").animate(
+            {
+                scrollTop: posicaoInicio
+            }, 300);
+        }
+
 
 
 

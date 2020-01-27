@@ -9,6 +9,17 @@ function placar() {
     var linha = novaLinha(usuario, numPalavras);
     linha.find('.remover').click(removerLinha)
     tabela.prepend(linha);
+    $('.placar').slideDown(800);
+    scrollPlacar();
+}
+
+function scrollPlacar() {
+    var posicaoPlacar = $(".placar").offset().top;
+
+    $("html, body").animate(
+    {
+        scrollTop: posicaoPlacar
+    }, 1000);
 }
 
 function novaLinha(usuario, numPalavras) {
@@ -33,10 +44,10 @@ function novaLinha(usuario, numPalavras) {
 
 function removerLinha() {
     event.preventDefault();
-    $(this).parent().parent().fadeOut(1000);
+    $(this).parent().parent().fadeOut(500);
     setTimeout(function () {
         $(this).parent().parent().remove();
-    }, 1000);
+    }, 500);
 }
 
 function checarVitoria () {
@@ -56,5 +67,5 @@ function checarVitoria () {
 }
 
 function exibePlacar() {
-  $('.placar').slideToggle(1000);
+  $('.placar').stop().slideToggle(1000);
 }
