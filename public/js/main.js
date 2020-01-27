@@ -46,12 +46,17 @@ function cronometro() {
             if (tempo <=0) {
               campoTexto.attr('disabled', true);
               clearInterval(cronometroId);
-              botaoReinicio.attr("disabled", false);
-              campoTexto.toggleClass('campoDesativado');
-              botaoReinicio.toggleClass('campoDesativado');
+              gameOver();
             }
           }, 1000);
     });
+}
+
+function gameOver() {
+    botaoReinicio.attr("disabled", false);
+    campoTexto.toggleClass('campoDesativado');
+    botaoReinicio.toggleClass('campoDesativado');
+    placar();
 }
 
 function marcadores() {
@@ -82,5 +87,15 @@ function reiniciarJogo() {
         botaoReinicio.toggleClass('campoDesativado');
         campoTexto.removeClass('textoErrado');
         campoTexto.removeClass('textoCerto');
+}
 
+function placar() {
+    var tabela = $('.placar').find('tbody');
+    var usuario = 'Gabriele';
+    var numPalavras = $('.contPalavras').text();
+    var linha = '<tr>'+
+                   '<td>' + usuario + '</td>' +
+                   '<td>' + numPalavras + '</td>' +
+                '</tr>';
+    tabela.append(linha);
 }
