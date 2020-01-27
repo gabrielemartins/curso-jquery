@@ -1,14 +1,18 @@
 var botaoReinicio = $('.reinicioJogo');
-botaoReinicio.addClass('campoDesativado')
+botaoReinicio.addClass('campoDesativado');
+
 var tempoInicial = $('.segundos').text();
 var campoTexto = $('.campoDigitacao');
 
+
 $(function () {
+    marcadores();
     tamanhoFrase();
     contadores();
     cronometro();
     botaoReinicio.click(reiniciarJogo);
-    campoTexto.val('')
+    campoTexto.val('');
+    
 });
 
 function tamanhoFrase() {
@@ -44,9 +48,26 @@ function cronometro() {
               clearInterval(cronometroId);
               botaoReinicio.attr("disabled", false);
               campoTexto.toggleClass('campoDesativado');
-              botaoReinicio.toggleClass('campoDesativado')
+              botaoReinicio.toggleClass('campoDesativado');
             }
           }, 1000);
+    });
+}
+
+function marcadores() {
+    campoTexto.on('input', function () {
+        var frase = $('.frase').text();
+        var conteudo = campoTexto.val();
+        var comparavel = frase.substr(0, conteudo.length);
+    
+        if (conteudo == comparavel) {
+            campoTexto.addClass('textoCerto');
+            campoTexto.removeClass('textoErrado');
+        }
+        else {
+            campoTexto.addClass('textoErrado');
+            campoTexto.removeClass('textoCerto');
+        }
     });
 }
 
@@ -58,6 +79,8 @@ function reiniciarJogo() {
         $('.segundos').text(tempoInicial);
         cronometro();
         campoTexto.toggleClass('campoDesativado');
-        botaoReinicio.toggleClass('campoDesativado')
+        botaoReinicio.toggleClass('campoDesativado');
+        campoTexto.removeClass('textoErrado');
+        campoTexto.removeClass('textoCerto');
 
 }

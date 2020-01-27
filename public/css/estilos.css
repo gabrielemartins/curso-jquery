@@ -18,9 +18,17 @@ li{
 .campoDigitacao {
     height: 30%;
     font-size: 130%;
+    border: 3px solid #084BCF;
 }
 
 .campoDesativado {
     opacity: 0.25;
 }
 
+.textoCerto {
+    border: 3px solid #6BBF78;
+}
+
+.textoErrado {
+    border: 3px solid #DE323B;
+}
