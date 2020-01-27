@@ -1,6 +1,7 @@
 body {
     color: white;
     background-color: #0E0C13;
+    overflow: scroll;
 }
 
 li{
@@ -36,4 +37,8 @@ h1 {
 
 .textoErrado {
     border: 3px solid #DE323B;
+}
+
+.placar {
+    display: none;
 }

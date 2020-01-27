@@ -1,3 +1,6 @@
+var botaoPlacar = $('.mostraPlacar');
+botaoPlacar.click(exibePlacar)
+
 function placar() {
     var tabela = $('.placar').find('tbody');
     var usuario = 'Gabriele';
@@ -30,7 +33,10 @@ function novaLinha(usuario, numPalavras) {
 
 function removerLinha() {
     event.preventDefault();
-    $(this).parent().parent().remove();
+    $(this).parent().parent().fadeOut(1000);
+    setTimeout(function () {
+        $(this).parent().parent().remove();
+    }, 1000);
 }
 
 function checarVitoria () {
@@ -47,4 +53,8 @@ function checarVitoria () {
     }
 
     return check
+}
+
+function exibePlacar() {
+  $('.placar').slideToggle(1000);
 }
