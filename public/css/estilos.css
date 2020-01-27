@@ -3,13 +3,17 @@ body {
     background-color: #0E0C13;
 }
 
-
 li{
     margin-top: 02%;
 }
 
+h1 {
+    color: #084BCF;
+}
+
 .frase {
     font-size: 150%;
+    margin-bottom: 5%;
 }
 
 .icons {

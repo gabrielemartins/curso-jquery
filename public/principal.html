@@ -2,15 +2,15 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Alura Typer</title>
+    <title>Typer</title>
     <link rel="stylesheet" href="./css/libs/materialize.min.css">
     <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
     <div class="container">
-    <h1 class="center">Alura Typer</h1>
-    <p class="frase center">Esta frase tem 5 palavras</p>
+    <h1 class="center">Typer Game</h1>
+    <p class="frase center">Você deve copiar esta frase para ganhar o jogo</p>
 
     <ul class="informacoes center">
         <li>
@@ -36,8 +36,8 @@
             </li>
         </ul>
         <div class="botoes">
-            <a class="btn-floating btn-large waves-effect waves-light red">
-                <i class="material-icons reinicioJogo">restore</i>
+            <a class="btn-floating btn-large waves-effect waves-light red reinicioJogo">
+                <i class="material-icons">restore</i>
             </a>
         </div>
 
@@ -48,11 +48,12 @@
                     <tr>
                         <th>Nome</th>
                         <th>Score</th>
+                        <th>Resultado</th>
                         <th>Remover</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
             </table>
         </section>
@@ -60,5 +61,6 @@
     </div>
     <script src="./js/jquery.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/placar.js"></script>
 </body>
 </html>
