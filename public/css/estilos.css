@@ -12,6 +12,10 @@ h1 {
     color: #084BCF;
 }
 
+.botoes a {
+    margin-right: 5%;
+}
+
 .placar, .erroAjax, #spinner {
     display: none;
 }
@@ -49,4 +53,8 @@ h1 {
 .erroAjax{
     color: #DE323B;
     font-size: 130%;
+}
+
+#idFrase {
+    width: 10%;
 }
