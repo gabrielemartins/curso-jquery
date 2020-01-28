@@ -14,7 +14,10 @@ h1 {
 
 .frase {
     font-size: 150%;
-    margin-bottom: 5%;
+}
+
+.informacoes {
+    margin-top: 5%;
 }
 
 .icons {
@@ -41,4 +44,10 @@ h1 {
 
 .placar {
     display: none;
+}
+
+.erroAjax{
+    display: none;
+    color: #DE323B;
+    font-size: 130%;
 }

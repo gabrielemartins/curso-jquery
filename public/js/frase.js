@@ -2,7 +2,13 @@ var frase = $('.frase');
 var botaoAlterar = $('.trocaFrase').click(alterarFrase);
 
 function alterarFrase() {
-    $.get("http://localhost:3000/frases", definirFrase);
+    $.get("http://localhost:3000/frases", definirFrase)
+    .fail(function () {
+        $('.erroAjax').show();
+        setTimeout(function () {
+          $('.erroAjax').toggle();  
+        }, 1500)
+      });
 }
 
 function definirFrase (data) {
