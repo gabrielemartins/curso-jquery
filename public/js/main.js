@@ -38,8 +38,8 @@ function contadores () {
 
 
 function cronometro() {
-    var tempo = $('.segundos').text();
     campoTexto.one('focus', function () {
+        var tempo = $('.segundos').text();
         botaoReinicio.attr("disabled",true);
         var cronometroId = setInterval(function () {
             tempo--;
