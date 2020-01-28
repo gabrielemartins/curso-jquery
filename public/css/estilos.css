@@ -20,12 +20,12 @@ h1 {
     display: none;
 }
 
-.frase {
-    font-size: 150%;
+.informacoes, .botoes, .placar{
+    margin-top: 5%;
 }
 
-.informacoes {
-    margin-top: 5%;
+.frase {
+    font-size: 150%;
 }
 
 .icons {

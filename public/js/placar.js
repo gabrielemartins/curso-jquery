@@ -96,4 +96,15 @@ function sincronizarPlacar() {
       })
 }
 
-
+function atualizarPlacar() {
+    $.get("http://localhost:3000/placar",
+        function (data) {
+            $(data).each(function () { 
+                 var linha = novaLinha(this.usuario, this.pontos);
+                 $('tbody').append(linha);
+                 linha.find('.remover').click(removerLinha)
+            });
+            
+        }
+    );
+}

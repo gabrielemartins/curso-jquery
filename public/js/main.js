@@ -12,6 +12,7 @@ $(function () {
     cronometro();
     botaoReinicio.click(reiniciarJogo);
     campoTexto.val('');
+    atualizarPlacar()
     
 });
 
