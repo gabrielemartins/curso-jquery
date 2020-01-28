@@ -1,5 +1,9 @@
 var botaoPlacar = $('.mostraPlacar');
-botaoPlacar.click(exibePlacar)
+botaoPlacar.click(exibirPlacar);
+
+var botaoSync = $('.sync');
+botaoSync.click(sincronizarPlacar);
+
 
 function placar() {
     var tabela = $('.placar').find('tbody');
@@ -29,14 +33,14 @@ function novaLinha(usuario, numPalavras) {
     var colunaRemover = $('<td>');
     var linkRemover = $('<a>').addClass('remover').attr('href', '#');
     var icone = $('<i>').addClass('small').addClass('material-icons').text('delete');
-    var resultado = $('<td>');
-    resultado.text(checarVitoria)
+    //var resultado = $('<td>');
+    //resultado.text(checarVitoria)
   
     linkRemover.append(icone);
     colunaRemover.append(linkRemover);
     linha.append(colunaUsuario);
     linha.append(colunaPalavras);
-    linha.append(resultado);
+    //linha.append(resultado);
     linha.append(colunaRemover);
     
     return linha;
@@ -66,6 +70,30 @@ function checarVitoria () {
     return check
 }
 
-function exibePlacar() {
+function exibirPlacar() {
   $('.placar').stop().slideToggle(1000);
 }
+
+function sincronizarPlacar() {
+    var placar = [];
+    var linhas = $('tbody>tr');
+    linhas.each(function () { 
+         var usuario = $(this).find('td:nth-child(1)').text();
+         var palavras = $(this).find('td:nth-child(2)').text();
+
+         var score = {
+            usuario: usuario,
+            pontos: palavras
+        }
+        placar.push(score)
+    });
+    var dados = {
+        placar: placar
+    };
+    
+    $.post("http://localhost:3000/placar", dados, function () {
+        console.log('Funcionou')
+      })
+}
+
+

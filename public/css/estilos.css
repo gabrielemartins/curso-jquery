@@ -58,3 +58,7 @@ h1 {
 #idFrase {
     width: 10%;
 }
+
+.sync {
+    float: right;
+}
