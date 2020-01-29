@@ -13,7 +13,7 @@ h1 {
 }
 
 .botoes a {
-    margin-right: 5%;
+    margin-right: 2%;
 }
 
 .placar, .erroAjax, #spinner {
@@ -61,4 +61,19 @@ h1 {
 
 .sync {
     float: right;
+}
+
+.selecaoUsuario, select{
+    display: inline-block;
+    margin-left: 3%;
+}
+
+
+select, option {
+    background-color: #084BCF;
+}
+
+.selectize-input{
+    width: 180%;
+    vertical-align: middle;
 }

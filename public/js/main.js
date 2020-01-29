@@ -12,7 +12,14 @@ $(function () {
     cronometro();
     botaoReinicio.click(reiniciarJogo);
     campoTexto.val('');
-    atualizarPlacar()
+    atualizarPlacar();
+    $(".defineUsuario").selectize({
+        create: true,
+        sortField: 'text'
+    });
+    $(".tooltip").tooltipster({
+        trigger: "custom"
+    });
     
 });
 
@@ -97,7 +104,7 @@ function reiniciarJogo() {
             {
                 scrollTop: posicaoInicio
             }, 300);
-        }
+}
 
 
 
